@@ -27,13 +27,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Je7-nC-V65">
-                                <rect key="frame" x="101.5" y="153" width="172" height="151"/>
+                                <rect key="frame" x="136" y="153" width="103" height="151"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="39"/>
-                                <state key="normal" title="titleButton">
+                                <state key="normal" title="Swipe">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="sampleButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d0r-Cr-ymB"/>
+                                    <action selector="swipeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d0r-Cr-ymB"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dcF-pQ-GN2">
@@ -209,6 +209,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Zcd-fx-XNm" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lNP-Zp-Y3J">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
