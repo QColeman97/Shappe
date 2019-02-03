@@ -11,6 +11,9 @@ class Item
 {
 	var name = ""
 	var pic = ""
+	var price = ""
+	var currency = ""
+	var id = ""
 	
 	init(name: String?, pic: String?) {
 		self.name = name ?? ""

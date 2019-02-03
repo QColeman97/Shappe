@@ -16,10 +16,11 @@ class MainViewController: UIViewController {
 	@IBOutlet weak var itemImageView: UIImageView!
 	@IBOutlet weak var itemTitleLabel: UILabel!
 	
+	//	let clothesPics = ["boots.png", "carolina-shirt.jpg", "festival-shirt.jpg", "shirt-maps.jpg", "shore_shirt.jpg"]
+	//	let clothesNames = ["Boots", "Carolina Shirt", "Festival Shirt", "Map Shirt", "Shores Shirt"]
+	
 	var clicked = false
 	var initialCenter = CGPoint()
-	let clothesPics = ["boots.png", "carolina-shirt.jpg", "festival-shirt.jpg", "shirt-maps.jpg", "shore_shirt.jpg"]
-	let clothesNames = ["Boots", "Carolina Shirt", "Festival Shirt", "Map Shirt", "Shores Shirt"]
 	var clothesIndex = 0
 	var apiWrapper: APIWrapper = APIWrapper()
 	var items = [Item]()
@@ -47,44 +48,43 @@ class MainViewController: UIViewController {
 	
 	@IBAction func onPan(_ sender: UIPanGestureRecognizer) {
 		
-		//guard sender.view != nil else {return}  same thing as below line
-		if let moveView = sender.view {
-			
-			let translation = sender.translation(in: moveView.superview)
-			if sender.state == .began {
-				self.initialCenter = moveView.center
-			}
-			else if sender.state == .changed {
-				let newCenter = CGPoint(x: initialCenter.x + translation.x, y: initialCenter.y)
-				moveView.center = newCenter
-				
-				moveView.alpha = CGFloat(1 - (abs(initialCenter.x - moveView.center.x) / initialCenter.x))
-				
-			}
-			else {
-				if let imageView = moveView as? UIImageView {
-					imageView.image = UIImage(named: clothesPics[clothesIndex])
-					itemTitleLabel.text = clothesNames[clothesIndex]
-				}
-				
-				if (clothesIndex < (clothesPics.count - 1)) {
-					clothesIndex += 1
-				} else {
-					clothesIndex = 0
-				}
-				
-				moveView.center = initialCenter
-				moveView.alpha = 1
-				
-				// Destroy current imageView, instantiate another
-				
-			}
-		}
+//		//guard sender.view != nil else {return}  same thing as below line
+//		if let moveView = sender.view {
+//
+//			let translation = sender.translation(in: moveView.superview)
+//			if sender.state == .began {
+//				self.initialCenter = moveView.center
+//			}
+//			else if sender.state == .changed {
+//				let newCenter = CGPoint(x: initialCenter.x + translation.x, y: initialCenter.y)
+//				moveView.center = newCenter
+//
+//				moveView.alpha = CGFloat(1 - (abs(initialCenter.x - moveView.center.x) / initialCenter.x))
+//
+//			}
+//			else {
+//				if let imageView = moveView as? UIImageView {
+//					imageView.image = UIImage(named: clothesPics[clothesIndex])
+//					itemTitleLabel.text = clothesNames[clothesIndex]
+//				}
+//
+//				if (clothesIndex < (clothesPics.count - 1)) {
+//					clothesIndex += 1
+//				} else {
+//					clothesIndex = 0
+//				}
+//
+//				moveView.center = initialCenter
+//				moveView.alpha = 1
+//
+//				// Destroy current imageView, instantiate another
+//
+//			}
+//		}
 	}
 	
 	
-	@IBAction func sampleButton(_ sender: UIButton) {
-		
+	@IBAction func swipeButton(_ sender: UIButton) {
 		if (clicked) {
 			clicked = false
 			shappeTitle.text = "Shaapping Spree!"
@@ -92,9 +92,14 @@ class MainViewController: UIViewController {
 			clicked = true
 			shappeTitle.text = "Shaappe 'til you draappe"
 		}
-		let randIndex = Int.random(in: 0..<clothesPics.count)
-		itemImageView.image = UIImage(named: clothesPics[randIndex])
-		itemTitleLabel.text = clothesNames[randIndex]
+		
+		let randIndex = Int.random(in: 0..<items.count)
+		itemImageView.image = UIImage(named: items[randIndex].pic)
+		itemTitleLabel.text = items[randIndex].name
+		
+		// let randIndex = Int.random(in: 0..<clothesPics.count)
+		// itemImageView.image = UIImage(named: clothesPics[randIndex])
+		//		itemTitleLabel.text = clothesNames[randIndex]
 	}
 
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

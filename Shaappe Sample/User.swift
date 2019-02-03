@@ -10,6 +10,9 @@ import Foundation
 
 class User : Hashable {
 	
+	var username = ""
+	var pic = ""
+	
 	static func == (lhs: User, rhs: User) -> Bool {
 		return true
 	}
@@ -18,5 +21,8 @@ class User : Hashable {
 		
 	}
 	
-	init() {}
+	init(username: String?, pic: String?) {
+		self.username = username ?? ""
+		self.pic = pic ?? ""
+	}
 }
