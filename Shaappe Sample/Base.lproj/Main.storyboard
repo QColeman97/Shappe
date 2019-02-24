@@ -27,13 +27,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Je7-nC-V65">
-                                <rect key="frame" x="136" y="153" width="103" height="151"/>
+                                <rect key="frame" x="101.5" y="153" width="172" height="151"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="39"/>
-                                <state key="normal" title="Swipe">
+                                <state key="normal" title="titleButton">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="swipeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d0r-Cr-ymB"/>
+                                    <action selector="sampleButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d0r-Cr-ymB"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dcF-pQ-GN2">
@@ -76,6 +76,7 @@
                             <constraint firstItem="dcF-pQ-GN2" firstAttribute="bottom" secondItem="0Yc-72-xoB" secondAttribute="bottom" id="g08-m1-Lpo"/>
                             <constraint firstItem="dcF-pQ-GN2" firstAttribute="trailing" secondItem="0Yc-72-xoB" secondAttribute="trailing" id="pjG-7z-ftT"/>
                             <constraint firstItem="j6K-dQ-Ibo" firstAttribute="centerX" secondItem="dcF-pQ-GN2" secondAttribute="centerX" id="tsO-Zr-olG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ndo-Cq-IY0" secondAttribute="trailing" symbolic="YES" id="xfp-td-aT1"/>
                             <constraint firstItem="0Yc-72-xoB" firstAttribute="leading" secondItem="dcF-pQ-GN2" secondAttribute="leading" id="yMV-CY-PWL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
